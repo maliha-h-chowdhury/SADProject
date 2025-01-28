@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Queen\'s Hospital</string>
+    <string name="patient_image_desc">Image of a patient</string>
+    <string name="doctor_image_desc">Image of a doctor</string>
+    <string name="filter">Filter</string>
+
+</resources>

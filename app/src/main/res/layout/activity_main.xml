@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/qh_background"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/doctor_image"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:layout_marginEnd="20dp"
+        android:contentDescription="@string/doctor_image_desc"
+        android:src="@drawable/qh_doctor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.468" />
+
+    <Button
+        android:id="@+id/button_doctor"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:backgroundTint="@android:color/holo_blue_light"
+        android:padding="15dp"
+        android:text="Doctor"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/doctor_image"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/doctor_image"
+        app:layout_constraintTop_toBottomOf="@+id/doctor_image"
+        app:layout_constraintVertical_bias="0.056" />
+
+    <Button
+        android:id="@+id/button_patient"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:backgroundTint="@android:color/holo_green_light"
+        android:padding="15dp"
+        android:text="Patient"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/patient_image"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/patient_image"
+        app:layout_constraintTop_toBottomOf="@+id/patient_image"
+        app:layout_constraintVertical_bias="0.056"
+        tools:ignore="HardcodedText" />
+
+    <ImageView
+        android:id="@+id/patient_image"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="20dp"
+        android:contentDescription="@string/patient_image_desc"
+        android:src="@drawable/qh_patient"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.468" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
