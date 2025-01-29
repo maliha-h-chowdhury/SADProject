@@ -5,48 +5,58 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.AuthResult;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 
 public class PatientRegisterActivity extends AppCompatActivity {
-
-    private EditText editTextPhone, editTextEmail;
+    private EditText editTextEmail, editTextPassword;
     private Button buttonRegister;
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_patient_register);
 
-        // Initialize EditText and Button
-        editTextPhone = findViewById(R.id.editTextPhone);
+        mAuth = FirebaseAuth.getInstance();
+
         editTextEmail = findViewById(R.id.editTextEmail);
+        editTextPassword = findViewById(R.id.editTextPassword);
         buttonRegister = findViewById(R.id.buttonRegister);
 
-        // Set OnClickListener for Register Button
         buttonRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                registerPatient();
+                registerUser();
             }
         });
     }
 
-    // Method to handle patient registration
-    private void registerPatient() {
-        // Retrieve input values from EditText fields
-        String phone = editTextPhone.getText().toString().trim();
+    private void registerUser() {
         String email = editTextEmail.getText().toString().trim();
+        String password = editTextPassword.getText().toString().trim();
 
-        // Validate input fields
-        if (phone.isEmpty() || email.isEmpty()) {
-            Toast.makeText(this, "Please fill all fields", Toast.LENGTH_SHORT).show();
+        if (email.isEmpty() || password.isEmpty()) {
+            Toast.makeText(this, "Please enter email and password", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        // Here you can add code to save the patient registration details to your database or backend
-        // For demonstration, just show a success message
-        Toast.makeText(this, "Patient registered successfully", Toast.LENGTH_SHORT).show();
-
+        mAuth.createUserWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            FirebaseUser user = mAuth.getCurrentUser();
+                            Toast.makeText(PatientRegisterActivity.this, "Registration successful", Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(PatientRegisterActivity.this, "Registration failed: " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                        }
+                    }
+                });
     }
 }

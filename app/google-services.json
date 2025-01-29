@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "719865973050",
-    "project_id": "queenshospital2",
-    "storage_bucket": "queenshospital2.appspot.com"
+    "project_number": "326167600675",
+    "project_id": "queen-s-hospital",
+    "storage_bucket": "queen-s-hospital.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:719865973050:android:20bb4fc079cbf38f1a2803",
+        "mobilesdk_app_id": "1:326167600675:android:6a0848b88826b4e72edb96",
         "android_client_info": {
           "package_name": "com.example.queenshospital2"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDKsySLXevy8ewXgWAwWjTiz5KxxjfXWog"
+          "current_key": "AIzaSyBp2Ix5cA0rrlqBf3IXCdsumoIe3PwfmPs"
         }
       ],
       "services": {

@@ -8,18 +8,42 @@
     tools:context=".PatientRegisterActivity">
 
     <EditText
+        android:id="@+id/editTextUsername"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="140dp"
+        android:hint="Username"
+        android:importantForAutofill="yes"
+        android:inputType="text"
+        android:minHeight="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextPassword"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:minHeight="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editTextUsername" />
+
+    <EditText
         android:id="@+id/editTextPhone"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="20dp"
         android:hint="Phone"
-        android:minHeight="50dp"
         android:inputType="phone"
-        android:importantForAutofill="no"
+        android:minHeight="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="HardcodedText" />
+        app:layout_constraintTop_toBottomOf="@id/editTextPassword" />
 
     <EditText
         android:id="@+id/editTextEmail"
@@ -27,25 +51,22 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:hint="Email"
-        android:minHeight="50dp"
         android:inputType="textEmailAddress"
-        android:importantForAutofill="no"
+        android:minHeight="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/editTextPhone"
-        tools:ignore="HardcodedText" />
+        app:layout_constraintTop_toBottomOf="@id/editTextPhone" />
 
     <Button
         android:id="@+id/buttonRegister"
-        android:layout_width="0dp"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="35dp"
         android:text="Register"
-        android:backgroundTint="@android:color/holo_green_light"
+        android:backgroundTint="@android:color/holo_blue_light"
         android:textColor="@android:color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/editTextEmail"
-        tools:ignore="HardcodedText" />
+        app:layout_constraintTop_toBottomOf="@id/editTextEmail" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
